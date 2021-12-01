@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+/* Bootstrap is primary 
+
+=== Pallete ===
+white green: #e3f8e7
+lightest green: #4df16f
+light green: #35b951
+dark green: #26883b
+darker green: #195a27
+darkest green: #0a240f
+*/
+
+body {
+    background-color: #212529f3 !important;
+    color: #e3f8e7 !important;
+}
+
+.container {
+    padding-top: 2em !important;
+}
+
+
+/* Green nav-bar */
+
+.navbar-brand {
+    color:#4df16f !important;
+    padding-left: 2em !important;
+}
+
+.nav-link {
+    color:#35b951 !important;
+}
+
+.nav-link:hover {
+    color:#4df16f !important;
+}
+
+/* Cards TODO */
+.card {
+    width: auto !important;
+    max-width: auto !important;
+}
