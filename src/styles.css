@@ -1,17 +1,19 @@
-/* Bootstrap is primary 
+/* My Bootstrap overrides
 
-=== Pallete ===
-white green: #e3f8e7
-lightest green: #4df16f
-light green: #35b951
-dark green: #26883b
-darker green: #195a27
-darkest green: #0a240f
+=== Pallete 1 ===
+https://www.csscolorpalettes.com/palettes/633
+
+darkest: #222831
+darker: #3f3f41
+dark: #393e46
+orange: #f96d00
+light-orange: #f96d00
+white: #f2f2f2
 */
 
 body {
-    background-color: #212529f3 !important;
-    color: #e3f8e7 !important;
+    background-color: #393e46 !important;
+    color: #f2f2f2 !important;
 }
 
 .container {
@@ -19,23 +21,44 @@ body {
 }
 
 
-/* Green nav-bar */
+/* nav-bar */
 
 .navbar-brand {
-    color:#4df16f !important;
+    color:#f96d00 !important;
     padding-left: 2em !important;
+    text-shadow: 3px 2px 2px black;
 }
 
 .nav-link {
-    color:#35b951 !important;
+    color:#ffa058 !important;
 }
 
 .nav-link:hover {
-    color:#4df16f !important;
+    color:#ffa058 !important;
 }
 
-/* Cards TODO */
+/* Cards */
+
 .card {
     width: auto !important;
     max-width: auto !important;
+}
+
+.card-header {
+    color:#f2f2f2 !important;
+    text-shadow: 3px 2px 2px black;
+}
+
+.card-body {
+    background: #353537 !important;
+    color: #f96d00 !important;
+    text-shadow: 3px 2px 2px black;
+}
+
+/* icons */
+.social-icon {
+    background-color: red;
+}
+.social-icon:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
 }
