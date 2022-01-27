@@ -41,7 +41,7 @@ body {
     color:#ffa058 !important;
 }
 
-/* Cards */
+/* cards */
 
 .card {
     width: auto !important;
@@ -63,12 +63,6 @@ body {
 }
 
 /* icons */
-.social-icon {
-    background-color: rgba(0, 0, 0, 0);
-}
-.social-icon:hover {
-    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
-}
 
 .icon{
     max-height: 4em;
