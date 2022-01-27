@@ -1,0 +1,15 @@
+
+=== Pallete 1 ===
+https://www.csscolorpalettes.com/palettes/633
+
+darkest: #222831
+darker: #3f3f41
+dark: #393e46
+light-dark:
+
+dark-orange: #f96d00
+orange: #f96d00
+light-orange: #f96d00
+
+white: #f2f2f2
+light-grey: #c7c7c7
