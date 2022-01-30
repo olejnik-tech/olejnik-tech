@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BusinessCardComponent } from './business-card/business-card.component';
 import { BreadcrumbModule } from 'angular-crumbs';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PortfolioComponent,
-    BusinessCardComponent
+    BusinessCardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -14,21 +14,28 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarApp">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
       <li class="nav-item active" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['home']">Home</a>
+        <a class="nav-link nav-link-custom" [routerLink]="['home']">Home</a>
       </li>
 
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['portfolio']">Portfolio</a>
+        <a class="nav-link nav-link-custom" [routerLink]="['portfolio']">Portfolio</a>
       </li>
 
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['business-card']">Business Card</a>
+        <a class="nav-link nav-link-custom" [routerLink]="['business-card']">Business Card</a>
       </li>
       
     </ul>
+
+  <ul class="navbar-nav" style="padding-right: 2em;">
+    <li class="nav-item" [routerLinkActive]="['active']">
+      <a class="nav-link disabled" [routerLink]="['login']">Login</a>
+    </li>
+  </ul>
+
   </div>
 </nav>
 
@@ -59,4 +66,3 @@
 
   </div>
 </div>
-
