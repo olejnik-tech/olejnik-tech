@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BusinessCardComponent } from './business-card/business-card.component';
+import { BreadcrumbModule } from 'angular-crumbs';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BusinessCardComponent } from './business-card/business-card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule, 
+    BreadcrumbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,7 +17,7 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
       <li class="nav-item active" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['home']">Home</a>
       </li>
 
       <li class="nav-item" [routerLinkActive]="['active']">
@@ -33,6 +33,30 @@
 </nav>
 
 <div class="container">
-<router-outlet></router-outlet>
+
+  <div class="card bg-dark">
+    <div class="card-header" style="max-height: 38px;">
+      <breadcrumb #parent>
+        <ol class="breadcrumb">
+          <ng-template ngFor let-route [ngForOf]="parent.breadcrumbs">
+
+            <li>
+              <a href="" [routerLink]="['home']"> olejnik.tech&emsp;/&emsp;</a>
+            </li>
+
+            <li *ngIf="!route.terminal" vlass="breadcrumb-item">
+              <a href="" [routerLink]="route.url">{{ route.displayName }}</a>
+            </li>
+            
+            <li *ngIf="route.terminal" class="breadcrumb-item active">{{ route.displayName }}</li>
+
+          </ng-template>
+        </ol>
+      </breadcrumb>
+    </div>
+
+    <router-outlet></router-outlet>
+
+  </div>
 </div>
 

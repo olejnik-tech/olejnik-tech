@@ -6,9 +6,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'portfolio', component: PortfolioComponent},
-  {path: 'business-card', component: BusinessCardComponent}
+  {path: 'home', component: HomeComponent, data: { breadcrumb: 'Home' }},
+  {path: 'portfolio', component: PortfolioComponent, data: { breadcrumb: 'Portfolio'}},
+  {path: 'business-card', component: BusinessCardComponent, data: { breadcrumb: 'BusinessCard'}}
 ];
 
 @NgModule({

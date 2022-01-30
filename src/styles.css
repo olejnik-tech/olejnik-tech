@@ -34,7 +34,7 @@ body {
 }
 
 /* links under cards - "breadscrums" */
-.card a:link, .card a:visited, .card a:hover, .card a:active {
+.breadcrumb a:link, .breadcrumb a:visited, .breadcrumb a:hover, .breadcrumb a:active {
     text-decoration: none;
     color: #d65d00;
 }
