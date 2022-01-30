@@ -1,4 +1,4 @@
-/* My Bootstrap overrides */
+/* Custom Bootstrap overrides */
 
 body {
     background-color: #393e46 !important;
@@ -18,11 +18,11 @@ body {
     text-shadow: 3px 2px 2px black;
 }
 
-.nav-link {
+.nav-link-custom {
     color:#ffa058 !important;
 }
 
-.nav-link:hover {
+.nav-link-custom:hover {
     color:#ffa058 !important;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 /* links under cards - "breadscrums" */
-.card a:link, .card a:visited, .card a:hover, .card a:active {
+.breadcrumb a:link, .breadcrumb a:visited, .breadcrumb a:hover, .breadcrumb a:active {
     text-decoration: none;
     color: #d65d00;
 }
@@ -63,4 +63,25 @@ body {
 
 .icon{
     max-height: 4em;
+}
+
+/* button */
+.btn-basic {
+    color: #fff;
+    background-color: #944000;
+    border-color: #492000;
+    margin-top: 5px;
+  }
+
+.btn-basic:hover {
+    color: #fff;
+    background-color: #bd5200;
+    border-color: #492000;
+  }
+
+/* inputs */
+.form-input{
+    background: #f2f2f2;
+    margin-bottom: 5px;
+
 }
