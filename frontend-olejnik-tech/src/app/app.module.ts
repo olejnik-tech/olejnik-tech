@@ -18,6 +18,7 @@ import { HabitTrackerComponent } from './productivity/habit-tracker/habit-tracke
 import { GamesComponent } from './games/games.component';
 import { CvComponent } from './portfolio/cv/cv.component';
 import { SocialNetworksComponent } from './portfolio/social-networks/social-networks.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SocialNetworksComponent } from './portfolio/social-networks/social-netw
     AppRoutingModule,
     RouterModule, 
     BreadcrumbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}

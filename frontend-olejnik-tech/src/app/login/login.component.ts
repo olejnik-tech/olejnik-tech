@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import { IUser } from '../model/iuser.model';
 
 @Component({
   selector: 'app-login',
@@ -8,32 +10,50 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  /*
-
-  testEmail = 'test@test.com';
-  testPassword = '1234';
-
   loginEmail = '';
   loginPassword = '';
+  loadedUser = false;
   
   regex = new RegExp('.+\\@.+\\..+');
 
-  */
 
-  constructor() { }
-
-  /*
+  constructor(private authService:AuthService) { }
 
   login(form: NgForm){
-    if(form.value.loginEmail === this.testEmail || form.value.loginPassword){
-      console.log('Login: Success');
-    }else{
-      console.log('Login: Failed')
+
+    let user: IUser = {
+      id : 0,
+      email : '',
+      password: ''
     }
 
-  }
+    this.authService.fakeLogin(this.loginEmail, this.loginPassword).subscribe(
+      data => {
+        user.id = data.id;
+        user.email = data.email;
+        user.password = data.password;
 
-  */
+        if (this.loginEmail == user.email &&
+          this.loginPassword == user.password){
+            console.log('success');
+        } else {
+          console.log('fail');
+        }
+
+        this.loadedUser = false;
+      }
+    )
+
+
+
+    // console.log(this.loginEmail)
+    // console.log(user.email)
+    // console.log(this.loginPassword)
+    // console.log(user.password)
+
+    
+
+  }
 
   ngOnInit(): void {
   }
