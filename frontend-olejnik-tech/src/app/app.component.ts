@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-olejnik-tech';
+
+  serverStatus: boolean = false;
+
+  constructor(private authService:AuthService){}
+
+  ngOnInit(): void {
+    this.authService.getServerStatus().subscribe(
+      data => {
+        this.serverStatus = data;
+      },
+    )
+  }
+
 }

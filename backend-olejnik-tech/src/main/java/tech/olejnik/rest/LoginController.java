@@ -12,18 +12,19 @@ import java.util.logging.Logger;
 @CrossOrigin(origins = "*")
 public class LoginController {
 
-    private static final Logger logger = Logger.getLogger(LoginController.class.getClass().getName());
+    private final Logger logger = Logger.getLogger(this.getClass().getName());
 
     @Autowired UserService service;
 
     @RequestMapping(method = RequestMethod.GET, path = "/test")
     public String getResponse(){
-        logger.info("test of rest service (frontend - backend connection)");
+        logger.info("getResponse: test of rest service (frontend - backend connection)");
         return "Hello from the back-end";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/findById/{id}")
     public User getUser(@PathVariable("id") Long id){
+        logger.info("getUser: byId");
         User user = service.findById(id);
         logger.info(user.toString());
         return service.findById(id);

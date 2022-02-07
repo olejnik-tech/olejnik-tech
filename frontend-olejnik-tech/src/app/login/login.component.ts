@@ -43,16 +43,6 @@ export class LoginComponent implements OnInit {
         this.loadedUser = false;
       }
     )
-
-
-
-    // console.log(this.loginEmail)
-    // console.log(user.email)
-    // console.log(this.loginPassword)
-    // console.log(user.password)
-
-    
-
   }
 
   ngOnInit(): void {

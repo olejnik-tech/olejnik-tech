@@ -58,7 +58,7 @@
 
   <ul class="navbar-nav" style="padding-right: 2em;">
     <li class="nav-item" [routerLinkActive]="['active']">
-      <a class="nav-link" [routerLink]="['login']">Login</a>
+      <a class="nav-link nav-link-custom" [routerLink]="['login']">Login</a>
     </li>
   </ul>
 
@@ -88,8 +88,19 @@
         </ol>
       </breadcrumb>
     </div>
-
     <router-outlet></router-outlet>
+
+    <div class="card-footer">
+      <div *ngIf="serverStatus">
+        <span class="dot-online"></span>
+        Server is online.
+      </div>
+      <div *ngIf="!serverStatus">
+        <span class="dot-offline"></span>
+        Server is offline.
+      </div>
+    </div>
 
   </div>
 </div>
+

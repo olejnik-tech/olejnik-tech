@@ -13,13 +13,14 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  getServerStatus() {
+    console.log('Getting server status...')
+    return this.http.get<boolean>(environment.backend + 'server/status');
+  }
+
   fakeLogin(loginEmail: string, loginPassword: string): Observable <IUser>{
-
+    console.log('Login authentication ...')
     let fakeUserHttpPath = environment.backend + 'login/findById/1';
-    let user: Observable<IUser> = this.http.get<IUser>(fakeUserHttpPath);
-
-    user.subscribe(data => console.log(data))
-
-    return user;
+    return this.http.get<IUser>(fakeUserHttpPath);
   }
 }
