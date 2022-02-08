@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -11,7 +10,17 @@ import { IUser } from './model/iuser.model';
 
 export class AuthService {
 
+  private loggedUser: string = '';
+
   constructor(private http: HttpClient) { }
+
+  get isLoggedIn(): boolean {
+    return this.loggedUser ? true:false;
+  }
+
+  setLoggedIn(loggedUser: string){
+    loggedUser = this.loggedUser;
+  }
 
   getServerStatus() {
     console.log('Getting server status...')
@@ -19,8 +28,16 @@ export class AuthService {
   }
 
   fakeLogin(loginEmail: string, loginPassword: string): Observable <IUser>{
-    console.log('Login authentication ...')
+    console.log('FakeLogin authentication ...')
     let fakeUserHttpPath = environment.backend + 'login/findById/1';
     return this.http.get<IUser>(fakeUserHttpPath);
   }
+
+  login(user: IUser): Observable <boolean>{
+    console.log('Login authentication ...')
+    console.log(user);
+    let loginHttpPath = environment.backend + 'login';
+    return this.http.post<boolean>(loginHttpPath, user);
+  }
+
 }

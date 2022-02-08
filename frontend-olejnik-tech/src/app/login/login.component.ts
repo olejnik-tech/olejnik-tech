@@ -13,6 +13,12 @@ export class LoginComponent implements OnInit {
   loginEmail = '';
   loginPassword = '';
   loadedUser = false;
+
+  user: IUser = {
+    id : 0,
+    email : '',
+    password: ''
+  }
   
   regex = new RegExp('.+\\@.+\\..+');
 
@@ -21,28 +27,15 @@ export class LoginComponent implements OnInit {
 
   login(form: NgForm){
 
-    let user: IUser = {
-      id : 0,
-      email : '',
-      password: ''
-    }
-
-    this.authService.fakeLogin(this.loginEmail, this.loginPassword).subscribe(
-      data => {
-        user.id = data.id;
-        user.email = data.email;
-        user.password = data.password;
-
-        if (this.loginEmail == user.email &&
-          this.loginPassword == user.password){
-            console.log('success');
-        } else {
-          console.log('fail');
+    this.authService.login(this.user).subscribe(
+      verified => {
+        console.log('logging: ' + this.user.email + ', verified: ' + verified);
+        if (verified) {
+          this.authService.setLoggedIn(this.user.email);
         }
-
-        this.loadedUser = false;
       }
     )
+
   }
 
   ngOnInit(): void {

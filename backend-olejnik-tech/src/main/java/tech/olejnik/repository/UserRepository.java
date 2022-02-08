@@ -7,4 +7,5 @@ import tech.olejnik.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
     public User findById(Long id);
+    public User findByEmail(String email);
 }

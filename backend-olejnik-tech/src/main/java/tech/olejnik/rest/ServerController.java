@@ -18,8 +18,7 @@ public class ServerController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/status")
     public Boolean getResponse(){
-        logger.info("Sent server status as online");
+        logger.info("Status: Sent server status as online.");
         return true;
     }
-
 }
