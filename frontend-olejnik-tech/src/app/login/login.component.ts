@@ -10,9 +10,9 @@ import { IUser } from '../model/iuser.model';
 })
 export class LoginComponent implements OnInit {
 
-  loginEmail = '';
-  loginPassword = '';
-  loadedUser = false;
+  badEmail = false;
+  badPassword = false;
+  serverStatus = false;
 
   user: IUser = {
     id : 0,
@@ -35,10 +35,18 @@ export class LoginComponent implements OnInit {
         }
       }
     )
-
   }
 
   ngOnInit(): void {
+    this.authService.getServerStatus().subscribe(
+      data => {
+        this.serverStatus = data;
+        this.authService.serverStatus.subscribe(ss => {
+          ss = data;
+        });
+      },
+    )
+
   }
 
 }

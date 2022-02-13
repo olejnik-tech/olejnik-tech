@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IUser } from './model/iuser.model';
 
 @Injectable({
@@ -11,33 +11,38 @@ import { IUser } from './model/iuser.model';
 export class AuthService {
 
   private loggedUser: string = '';
+  public serverStatus = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
+
+  getServerStatus() {
+    console.log('Getting server status ...');
+    let result = this.http.get<boolean>(environment.backend + 'server/status');
+
+    result.subscribe( res => {
+      this.serverStatus.subscribe(ss => ss = res);
+      console.log('Server status: ' + res);
+
+    });
+
+    this.serverStatus.subscribe(ss => console.log('first get from BehaviorSubject -> should be true: ' + ss));
+    return result;
+  }
+
+  login(user: IUser): Observable <boolean>{
+    console.log('Login authentication ...');
+    console.log(user);
+    let loginHttpPath = environment.backend + 'login';
+    return this.http.post<boolean>(loginHttpPath, user);
+  }
+
+  // Getters and Setters
 
   get isLoggedIn(): boolean {
     return this.loggedUser ? true:false;
   }
 
   setLoggedIn(loggedUser: string){
-    loggedUser = this.loggedUser;
+    this.loggedUser = loggedUser;
   }
-
-  getServerStatus() {
-    console.log('Getting server status...')
-    return this.http.get<boolean>(environment.backend + 'server/status');
-  }
-
-  fakeLogin(loginEmail: string, loginPassword: string): Observable <IUser>{
-    console.log('FakeLogin authentication ...')
-    let fakeUserHttpPath = environment.backend + 'login/findById/1';
-    return this.http.get<IUser>(fakeUserHttpPath);
-  }
-
-  login(user: IUser): Observable <boolean>{
-    console.log('Login authentication ...')
-    console.log(user);
-    let loginHttpPath = environment.backend + 'login';
-    return this.http.post<boolean>(loginHttpPath, user);
-  }
-
 }

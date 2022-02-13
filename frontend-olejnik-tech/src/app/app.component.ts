@@ -14,11 +14,15 @@ export class AppComponent {
   constructor(private authService:AuthService){}
 
   ngOnInit(): void {
+    // invoke server status and save the state
     this.authService.getServerStatus().subscribe(
       data => {
         this.serverStatus = data;
+        this.authService.serverStatus.subscribe(ss => {
+          ss = data;
+          console.log("app server status init: " + ss);
+        });
       },
     )
   }
-
 }
