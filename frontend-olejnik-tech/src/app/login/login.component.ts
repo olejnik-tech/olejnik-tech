@@ -30,24 +30,27 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.user).subscribe(
       verified => {
-        console.log('logging: ' + this.user.email + ', verified: ' + verified);
+        console.log('User \'' + this.user.email + '\' verified: ' + verified);
         if (verified) {
-          this.authService.setLoggedIn(this.user.email);
           this.badEmail = false;
           this.badPassword = false;
           this.successLogin = true;
-          console.log(this.badEmail + " " + this.badPassword)
+
+          this.authService.loggedUser = this.user.email;
+
         }
         // Failed login
       }, err => {
         if(err.status == 404){
-          console.log('error - wrong email');
+          console.log('Error 404 - wrong email.');
           this.successLogin = false;
           this.badEmail = true;
+          this.badPassword = false;
         }
         if(err.status == 401){
-          console.log('error - wrong password');
+          console.log('Error 401 - wrong password.');
           this.successLogin = false;
+          this.badEmail = false;
           this.badPassword = true;
         }
       }
@@ -55,12 +58,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Get server status
     this.authService.getServerStatus().subscribe(
       data => {
         this.serverStatus = data;
-        this.authService.serverStatus.subscribe(ss => {
-          ss = data;
-        });
+        this.authService.serverStatus.subscribe(ss => ss = data)
       },
     )
 

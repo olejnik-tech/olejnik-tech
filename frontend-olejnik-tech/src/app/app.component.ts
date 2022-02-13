@@ -10,18 +10,17 @@ export class AppComponent {
   title = 'web-olejnik-tech';
 
   serverStatus: boolean = false;
+  loggedUser : string = '';
 
-  constructor(private authService:AuthService){}
+  constructor(public authService:AuthService){}
 
   ngOnInit(): void {
-    // invoke server status and save the state
+    // Get server status
     this.authService.getServerStatus().subscribe(
       data => {
         this.serverStatus = data;
-        this.authService.serverStatus.subscribe(ss => {
-          ss = data;
-        });
+        this.authService.serverStatus.subscribe(ss => ss = data);
       },
-    )
+    );
   }
 }

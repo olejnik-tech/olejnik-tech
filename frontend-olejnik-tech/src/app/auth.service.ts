@@ -10,38 +10,25 @@ import { IUser } from './model/iuser.model';
 
 export class AuthService {
 
-  private loggedUser: string = '';
   public serverStatus = new BehaviorSubject<boolean>(false);
+  public loggedUser = '';
 
   constructor(private http: HttpClient) { }
 
   getServerStatus() {
-    console.log('Getting server status ...');
     let result = this.http.get<boolean>(environment.backend + 'server/status');
-
+    
     result.subscribe( res => {
       this.serverStatus.subscribe(ss => ss = res);
-      console.log('Server status: ' + res);
-
+      console.log('Server status: ' + res + '.');
     });
 
     return result;
   }
 
   login(user: IUser): Observable <boolean>{
-    console.log('Login authentication ...');
-    console.log(user);
     let loginHttpPath = environment.backend + 'login';
+    console.log('Logging in user \'' + user.email + '\'.');
     return this.http.post<boolean>(loginHttpPath, user);
-  }
-
-  // Getters and Setters
-
-  get isLoggedIn(): boolean {
-    return this.loggedUser ? true:false;
-  }
-
-  setLoggedIn(loggedUser: string){
-    this.loggedUser = loggedUser;
   }
 }
