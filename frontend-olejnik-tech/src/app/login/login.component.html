@@ -1,12 +1,16 @@
 
 <div class="card-body">
 
-    <div *ngIf="badEmail || badPassword" class="alert alert-danger" role="alert">
+    <div *ngIf="badEmail || badPassword" class="alert alert-danger" role="alert" style="margin-bottom: 1em;">
         Invalid email or password.
     </div>
 
     <div *ngIf="!serverStatus" class="alert alert-danger" role="alert" style="margin-bottom: 1em;">
         Cannot login while the server is offline.
+    </div>
+
+    <div *ngIf="successLogin" class="alert alert-success" role="alert" style="margin-bottom: 1em;">
+        Successfull Login.
     </div>
 
     <form #formLogin="ngForm" (ngSubmit)="login(formLogin)" id="login-form" *ngIf="serverStatus">

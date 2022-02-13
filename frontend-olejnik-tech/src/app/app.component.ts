@@ -20,7 +20,6 @@ export class AppComponent {
         this.serverStatus = data;
         this.authService.serverStatus.subscribe(ss => {
           ss = data;
-          console.log("app server status init: " + ss);
         });
       },
     )

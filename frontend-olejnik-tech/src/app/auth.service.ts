@@ -25,7 +25,6 @@ export class AuthService {
 
     });
 
-    this.serverStatus.subscribe(ss => console.log('first get from BehaviorSubject -> should be true: ' + ss));
     return result;
   }
 

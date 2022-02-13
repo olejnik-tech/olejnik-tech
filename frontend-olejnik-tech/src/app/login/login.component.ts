@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   badEmail = false;
   badPassword = false;
   serverStatus = false;
+  successLogin = false;
 
   user: IUser = {
     id : 0,
@@ -32,6 +33,22 @@ export class LoginComponent implements OnInit {
         console.log('logging: ' + this.user.email + ', verified: ' + verified);
         if (verified) {
           this.authService.setLoggedIn(this.user.email);
+          this.badEmail = false;
+          this.badPassword = false;
+          this.successLogin = true;
+          console.log(this.badEmail + " " + this.badPassword)
+        }
+        // Failed login
+      }, err => {
+        if(err.status == 404){
+          console.log('error - wrong email');
+          this.successLogin = false;
+          this.badEmail = true;
+        }
+        if(err.status == 401){
+          console.log('error - wrong password');
+          this.successLogin = false;
+          this.badPassword = true;
         }
       }
     )
