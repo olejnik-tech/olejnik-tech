@@ -80,8 +80,24 @@ body {
   }
 
 /* inputs */
-.form-input{
+.form-input {
     background: #f2f2f2;
     margin-bottom: 5px;
 
 }
+
+/* Alerts */
+.alert {
+    padding: 1%;
+    margin: 0;
+    height: 3em;
+    vertical-align: center;
+}
+
+/* Overlay */
+.overlay {
+    background: rgba(0, 0, 255, .75);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
