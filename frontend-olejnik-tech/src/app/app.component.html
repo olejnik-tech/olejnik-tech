@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
   
-  <a class="navbar-brand" href="#">olejnik.tech</a>
+  <a class="navbar-brand navbar-brand-custom" href="#">olejnik.tech</a>
   
   <button 
   class="navbar-toggler" 
@@ -24,7 +24,7 @@
         <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Portfolio
         </a>
-        <ul class="dropdown-menu nav-link-custom bg-dark" aria-labelledby="navbarDropdown">
+        <ul class="dropdown-menu nav-link-custom" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item nav-link-custom" [routerLink]="['portfolio/business-card']">Business Card</a></li>
           <li><a class="dropdown-item nav-link-custom" [routerLink]="['portfolio/cv']">CV</a></li>
           <li><a class="dropdown-item nav-link-custom" [routerLink]="['portfolio/social-networks']">Social Networks</a></li>
@@ -72,8 +72,8 @@
 </nav>
 
 <div class="container">
-  <div class="card bg-dark">
-    <div class="card-header" style="max-height: 38px;">
+  <div class="card bg-dark card-custom">
+    <div class="card-header card-header-custom" style="max-height: 38px;">
       <breadcrumb #parent>
         <ol class="breadcrumb">
           <li>
@@ -90,7 +90,7 @@
     </div>
     <router-outlet></router-outlet>
 
-    <div class="card-footer">
+    <div class="card-footer card-footer-custom">
       <div *ngIf="serverStatus">
         <span class="dot-online"></span>
         Server is online.
