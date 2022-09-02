@@ -78,6 +78,10 @@
               "browserTarget": "web-olejnik-tech:build:development"
             }
           },
+          "options": {
+            "sslKey" : "./ssl/olejnik-techCA.key",
+            "sslCert" : "./ssl/olejnik-techCA.crt"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
