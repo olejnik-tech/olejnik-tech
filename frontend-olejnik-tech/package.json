@@ -1,54 +1,27 @@
 {
-  "name": "web-olejnik-tech",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "name": "frontend-olejnik-tech",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@angular/animations": "~19.2.8",
-    "@angular/common": "~19.2.8",
-    "@angular/compiler": "~19.2.8",
-    "@angular/core": "~19.2.8",
-    "@angular/forms": "~19.2.8",
-    "@angular/platform-browser": "~19.2.8",
-    "@angular/platform-browser-dynamic": "~19.2.8",
-    "@angular/router": "~19.2.8",
-    "angular-crumbs": "^3.0.1",
-    "bootstrap": "^5.1.3",
-    "jquery": "^3.6.0",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.2.0",
-    "zone.js": "~0.11.4"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~19.2.8",
-    "@angular/cli": "^19.2.8",
-    "@angular/compiler-cli": "~19.2.8",
-    "@types/jasmine": "~3.8.0",
-    "@types/node": "^12.11.1",
-    "jasmine-core": "~3.8.0",
-    "karma": "~6.3.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.2"
-  },
-  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.",
-  "main": "karma.conf.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/olejnik-tech/web-olejnik-tech.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/olejnik-tech/web-olejnik-tech/issues"
-  },
-  "homepage": "https://github.com/olejnik-tech/web-olejnik-tech#readme"
+    "@eslint/js": "^9.22.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "vite": "^6.3.1"
+  }
 }

@@ -2,12 +2,16 @@
 .DS_Store
 Thumbs.db
 
-# === Node / Angular (any frontend folder) ===
+# === Frontend (Angular, React, Vite, any folder) ===
 **/node_modules/
 **/dist/
 **/.angular/
+**/.vite/
 **/package-lock.json
+**/yarn.lock
 **/src/environments/environment*.ts
+**/.env
+**/.env.*.local
 
 # === Java (Maven/Gradle, any backend folder) ===
 **/target/
@@ -35,6 +39,5 @@ yarn-error.log*
 # === Compiled Java files ===
 *.class
 
-# === Others ===
-.env
+# === Vim/Editor Swap Files ===
 *.swp
