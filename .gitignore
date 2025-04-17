@@ -1,0 +1,40 @@
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Node / Angular (any frontend folder) ===
+**/node_modules/
+**/dist/
+**/.angular/
+**/package-lock.json
+**/src/environments/environment*.ts
+
+# === Java (Maven/Gradle, any backend folder) ===
+**/target/
+**/build/
+**/.classpath
+**/.project
+**/.settings/
+**/*.iml
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+out/
+
+# === VS Code ===
+.vscode/
+
+# === Logs ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Compiled Java files ===
+*.class
+
+# === Others ===
+.env
+*.swp
