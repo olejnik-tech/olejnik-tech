@@ -2,6 +2,7 @@ package tech.olejnik.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import tech.olejnik.entity.User;
 import tech.olejnik.exception.AccountBadPasswordException;
@@ -18,7 +19,9 @@ public class UserServiceImpl implements UserService {
     @Override public boolean login(User user) throws AccountNotFoundException, AccountBadPasswordException {
         try {
             User userRepo = repo.findByEmail(user.getEmail());
-            Boolean verified = userRepo.getPassword().equals(user.getPassword());
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            boolean verified = encoder.matches(user.getPassword(), userRepo.getPassword_hash());
+
             if (verified){
                 return true;
             } else {

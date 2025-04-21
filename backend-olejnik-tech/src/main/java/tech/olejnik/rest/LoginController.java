@@ -28,7 +28,7 @@ public class LoginController {
         return service.findById(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+//    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Boolean> login(@RequestBody User user) throws AccountNotFoundException {
         try{
